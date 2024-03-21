@@ -1,35 +1,13 @@
-public class FirstPalindrome{
+public class firstpalindrome{
     public static void main(String[] args) {
-        String[] words = {"abc", "bcd", "aba", "cfg", "madam"};
-
-        String firstPalindrome = null;
-
-        for (int i = 0; i < words.length; i++) {
-            if (isPalindrome(words[i])) {
-                firstPalindrome = words[i];
+        String[] arr={"abc","bcd" , "aba","cfg","madam"};
+        for(int i=0;i<arr.length;i++){
+        	StringBuilder temp=new StringBuilder(arr[i]);
+        	String ans=temp.reverse().toString();  
+        	if(ans.equals(arr[i])){
+        		System.out.println(ans);
                 break;
             }
-        }
-
-        if (firstPalindrome != null) {
-            System.out.println("The first palindrome string in the list is: " + firstPalindrome);
-        } else {
-            System.out.println("No palindrome string found in the list.");
-        }
-    }
-
-    public static boolean isPalindrome(String word) {
-        int left = 0;
-        int right = word.length() - 1;
-
-        while (left < right) {
-            if (word.charAt(left) != word.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-
-        return true;
+       }
     }
 }
